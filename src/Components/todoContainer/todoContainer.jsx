@@ -5,33 +5,6 @@ import Todoheader from "../todoheader/todoheader";
 import Todolist from "../todolist/todolist";
 import styles from "./todoContainer.module.css";
 
-// const initialState = [
-//   {
-//     id: 1,
-//     text: "이직하기(지금뿐이다)",
-//     user: "hj",
-//     done: false
-//   },
-//   {
-//     id: 2,
-//     text: "하루 8시간씩 공부하기",
-//     user: "hj",
-//     done: false
-//   },
-//   {
-//     id: 3,
-//     text: "스트레스 관리",
-//     user: "hj",
-//     done: true
-//   },
-//   {
-//     id: 4,
-//     text: "충분한 수면",
-//     user: "hj",
-//     done: true
-//   }
-// ];
-
 const TodoContainer = ({ authService, todoRepository }) => {
   const [todos, setTodos] = useState([]);
 
@@ -101,20 +74,18 @@ const TodoContainer = ({ authService, todoRepository }) => {
     todoRepository.removeTodo(userId, todoToDel);
   };
 
-  const onChecked = changedCheckbox => {
-    console.log("onChecked: ", changedCheckbox);
+  const onChecked = checkedTodo => {
+    console.log("onChecked: ", checkedTodo);
     setTodos(todos => {
-      return todos.map(
+      const updated = todos.map(
         todo =>
-          todo.id === changedCheckbox.id
-            ? {
-                ...todo,
-                done: !todo.done
-              }
+          todo.id === checkedTodo.id
+            ? { ...todo, done: checkedTodo.done }
             : todo
       );
+      return updated;
     });
-    todoRepository.saveTodo(userId, changedCheckbox);
+    todoRepository.saveTodo(userId, checkedTodo);
   };
 
   return (

@@ -34,8 +34,17 @@ const TodoItem = ({ todo, deleteTodo, editTodo, onChecked }) => {
     deleteTodo(todo);
   };
 
-  const onToggle = () => {
-    onChecked(todo);
+  const onToggle = e => {
+    console.log("onToggle", e);
+    if (text) {
+      const updated = {
+        id: todo.id,
+        text: text,
+        user: todo.user,
+        done: !todo.done
+      };
+      onChecked(updated);
+    }
   };
 
   const handleKeyPress = e => {
@@ -62,19 +71,12 @@ const TodoItem = ({ todo, deleteTodo, editTodo, onChecked }) => {
     <ul className={styles.items}>
       <li className={styles.item}>
         <section className={styles.contents}>
-          {todo.done === false
-            ? <input
-                className={styles.checkbox}
-                type="checkbox"
-                checked={false}
-                onChange={onToggle}
-              />
-            : <input
-                className={styles.checkbox}
-                type="checkbox"
-                checked={true}
-                onChange={onToggle}
-              />}
+          <input
+            className={styles.checkbox}
+            type="checkbox"
+            checked={todo.done}
+            onChange={onToggle}
+          />
           {editMode === true
             ? <input
                 type="text"
