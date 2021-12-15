@@ -1,0 +1,36 @@
+.items {
+    margin: 20px 15px 0 15px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3px 20px 3px 20px;
+    height: 35px;
+    align-items: center;
+    margin-top: 10px;
+
+    -webkit-box-shadow: 3px 2px 1px 1px rgba(0,0,0,0.15); 
+    box-shadow: 3px 2px 1px 1px rgba(0,0,0,0.15);
+}
+
+.contents > span {
+    margin-left: 10px;
+}
+
+.buttons > button {
+    margin-left: 10px;
+    width: 50px;
+    height: 20px;
+}
+
+.textInput {
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.contents {
+    display: flex;
+    align-items: center;
+}

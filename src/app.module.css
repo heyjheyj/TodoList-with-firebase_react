@@ -1,0 +1,42 @@
+:root {
+  /* color */
+  --color-gray: rgb(167, 167, 167);
+  --color-blue: #00A0D7;
+  --color-blue-geen: #00BFD1;
+  --color-green: rgba(146,189,104);
+  --color-green-light: #95EE8A;
+  --color-black: rgb(26, 26, 26);
+  --color-yellow: #F9F871;
+  --color-white: #FFFFFF;
+  --color-background-gray: #e9ecef;
+
+  /* padding */
+  --margin-left: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+button {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
+}
+
+button:hover {
+  background-color: var(--color-green);
+  transform: scale(1.05);
+  color: white;
+}
+
+.app {
+  width: 450px;
+  height: 700px;
+  background-color: var(--color-white);
+  border-radius: 30px;
+}

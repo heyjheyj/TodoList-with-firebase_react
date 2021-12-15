@@ -1,0 +1,23 @@
+.login {
+    width: 300px;
+    height: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+}
+
+.loginbtn {
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+}
+
+.text {
+    color: var(--color-green-dark);
+}

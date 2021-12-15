@@ -1,0 +1,38 @@
+.todolist {
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 100%;
+
+}
+
+.lists {
+    background-color: var(--color-background-gray);
+    padding: 10px 0 5px 0;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    cursor: pointer;
+    color: rgb(101, 175, 41);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+
+.listContainer {
+    margin-top: 5px;
+    overflow: scroll;
+    border: 1px solid #f0f0f0;
+}
+
+.lists:hover {
+    background-color: #dfdfdf;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+}

@@ -1,0 +1,19 @@
+.inputfield {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.submit {
+    margin-left: 10px;
+    width: 30px;
+    font-size: 1.2rem;
+}
