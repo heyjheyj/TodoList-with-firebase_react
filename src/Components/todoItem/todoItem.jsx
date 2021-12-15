@@ -1,5 +1,8 @@
 import React, { useState, useRef } from "react";
 import styles from "./todoItem.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const TodoItem = ({ todo, deleteTodo, editTodo, onChecked }) => {
   // console.log("todo: ", todo);
@@ -92,8 +95,12 @@ const TodoItem = ({ todo, deleteTodo, editTodo, onChecked }) => {
               </span>}
         </section>
         <section className={styles.buttons}>
-          <button onClick={onEdit}>Edit</button>
-          <button onClick={onDelete}>Delete</button>
+          <button onClick={onEdit}>
+            <FontAwesomeIcon icon={faEdit} className={styles.edit} />
+          </button>
+          <button onClick={onDelete}>
+            <FontAwesomeIcon icon={faTrashAlt} className={styles.trash} />
+          </button>
         </section>
       </li>
     </ul>

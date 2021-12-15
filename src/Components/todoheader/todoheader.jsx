@@ -26,7 +26,7 @@ const Todoheader = ({ userId, authService }) => {
         {dateString}
       </h2>
       <button className={styles.logout} onClick={onLogout}>
-        Logout
+       Logout
       </button>
     </header>
     <p className={styles.day}>

@@ -21,8 +21,6 @@
 
 .buttons > button {
     margin-left: 10px;
-    width: 50px;
-    height: 20px;
 }
 
 .textInput {
@@ -33,4 +31,14 @@
 .contents {
     display: flex;
     align-items: center;
+}
+
+.trash, .edit {
+    font-size: 15px;
+    color: var(--color-gray);
+    background-color: white;
+}
+
+.trash:hover, .edit:hover {
+    color: rgb(75, 158, 55);
 }
