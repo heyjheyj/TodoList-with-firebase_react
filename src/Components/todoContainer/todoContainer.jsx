@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Todocreate from "../todocreate/todocreate";
 import Todoheader from "../todoheader/todoheader";
@@ -31,7 +31,7 @@ const TodoContainer = ({ authService, todoRepository }) => {
 
   useEffect(
     () => {
-      console.log("location:", location);
+      // console.log("location:", location);
 
       authService.onAuthChange(user => {
         if (user) {
@@ -42,6 +42,16 @@ const TodoContainer = ({ authService, todoRepository }) => {
       });
     },
     [authService, userId, navigate]
+  );
+
+  const onLogout = useCallback(
+    () => {
+      authService.logout();
+      if (!userId) {
+        navigate("/");
+      }
+    },
+    [authService]
   );
 
   const onCreateTodo = todoToCreate => {
@@ -90,7 +100,7 @@ const TodoContainer = ({ authService, todoRepository }) => {
 
   return (
     <div className={styles.container}>
-      <Todoheader userId={userId} authService={authService} />
+      <Todoheader onLogout={onLogout} />
       {todos &&
         <Todolist
           todos={todos}

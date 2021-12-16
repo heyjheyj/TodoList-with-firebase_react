@@ -12,8 +12,6 @@ const TodoItem = ({ todo, deleteTodo, editTodo, onChecked }) => {
   const [editMode, setEditMode] = useState(false);
   const [text, setText] = useState(todo.text);
 
-  let checked = false;
-
   const onEdit = () => {
     setEditMode(true);
     console.log("changed text: ", text);
@@ -39,10 +37,10 @@ const TodoItem = ({ todo, deleteTodo, editTodo, onChecked }) => {
 
   const onToggle = e => {
     console.log("onToggle", e);
-    if (text) {
+    if (e.target) {
       const updated = {
         id: todo.id,
-        text: text,
+        text: todo.text,
         user: todo.user,
         done: !todo.done
       };

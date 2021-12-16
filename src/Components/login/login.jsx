@@ -5,17 +5,20 @@ import styles from "./login.module.css";
 const Login = ({ authService }) => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    authService.onAuthChange(user => {
-      user && goTodolist(user.uid);
-    });
-  }, []);
-
   const goTodolist = userId => {
     navigate("/todolist", {
       state: { id: userId }
     });
   };
+
+  useEffect(
+    () => {
+      authService.onAuthChange(user => {
+        user && goTodolist(user.uid);
+      });
+    },
+    [authService]
+  );
 
   const onLogin = event => {
     console.log(event);

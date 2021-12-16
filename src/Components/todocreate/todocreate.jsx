@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { memo, useRef } from "react";
 import styles from "./todocreate.module.css";
 
-const Todocreate = ({ onCreateTodo, user }) => {
+const Todocreate = memo(({ onCreateTodo, user }) => {
   const textRef = useRef();
   const formRef = useRef();
 
@@ -35,6 +35,6 @@ const Todocreate = ({ onCreateTodo, user }) => {
       </button>
     </form>
   );
-};
+});
 
 export default Todocreate;

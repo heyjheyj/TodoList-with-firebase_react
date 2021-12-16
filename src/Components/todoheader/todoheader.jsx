@@ -1,5 +1,4 @@
-import React from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { memo } from "react";
 import styles from "./todoheader.module.css";
 
 const today = new Date();
@@ -10,14 +9,11 @@ let dateString = today.toLocaleDateString("ko-KR", {
 });
 const dayName = today.toLocaleDateString("ko-KR", { weekday: "long" });
 
-const Todoheader = ({ userId, authService }) => {
-  const navigate = useNavigate();
+const Todoheader = memo(({ Logout }) => {  
+  console.log('header');
   
   const onLogout = () => {
-    authService.logout();
-    if (!userId) {
-      navigate('/')
-    }
+      Logout();
   };
 
   return (<>
@@ -34,6 +30,6 @@ const Todoheader = ({ userId, authService }) => {
     </p>
     </>
   );
-};
+});
 
 export default Todoheader;
