@@ -2,7 +2,6 @@
     margin: 0 auto;
     margin-top: 10px;
     width: 100%;
-
 }
 
 .lists {
@@ -23,7 +22,6 @@
 
 
 .listContainer {
-    margin-top: 5px;
     overflow: scroll;
     border: 1px solid #f0f0f0;
 }
@@ -35,4 +33,16 @@
 .container {
     display: grid;
     grid-template-rows: 1fr 9fr;
+}
+
+@media screen and (max-width: 400px) {
+    .lists {
+        font-size: 18px;
+        height: 25px;
+    }
+    .container {
+        height: 80%;
+        display: grid;
+        grid-template-rows: 1fr 9fr;
+    }
 }

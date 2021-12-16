@@ -42,3 +42,24 @@
 .trash:hover, .edit:hover {
     color: rgb(75, 158, 55);
 }
+
+@media screen and (max-width: 400px){
+    .items {
+        margin: 10px 10px 0 10px;
+    }
+    .item {
+        padding: 3px 10px 3px 10px;
+    }
+    .contents > span {
+        margin-left: 5px;
+        font-size: 14px;
+    }
+    .trash, .edit {
+        font-size: 14px;
+    }
+    .textInput {
+        margin-left: 5px;
+        font-size: 14px;
+        width: 210px;
+    }
+}

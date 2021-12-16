@@ -40,10 +40,30 @@ button:hover {
 
 .background {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: scroll;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #cacaca;
+}
+
+@media screen and (max-width: 400px) {
+  .app {
+    width: 95%;
+    height: 98%;
+    background-color: var(--color-white);
+    border-radius: 30px;
+  }
+
+  .background {
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #cacaca;
+  }
+
 }

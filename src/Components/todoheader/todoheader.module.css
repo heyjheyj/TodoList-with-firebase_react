@@ -12,3 +12,21 @@
     color: var(--color-gray);
     padding-top: 5px;
 }
+
+@media screen and (max-width: 400px) {
+    .header {
+        padding: 0 5px 5px 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logout {
+        width: 60px;
+        height: 30px;
+    }
+    
+    .day {
+        color: var(--color-gray);
+        padding: 0 0 0 5px;
+    }
+}
