@@ -18,7 +18,6 @@ const Todocreate = memo(({ onCreateTodo, user }) => {
       };
       formRef.current.reset();
       onCreateTodo(todo);
-      console.log(todo);
     }
   };
 

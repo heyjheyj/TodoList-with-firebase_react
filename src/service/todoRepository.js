@@ -6,12 +6,10 @@ class TodoRepository {
   }
 
   saveTodo(userId, todo) {
-    console.log("ropository todo:", todo);
     set(ref(this.db, `${userId}/todos/${todo.id}`), todo);
   }
 
   removeTodo(userId, todo) {
-    console.log("reomove todo:", todo);
     remove(ref(this.db, `${userId}/todos/${todo.id}`));
   }
 

@@ -21,6 +21,7 @@ const TodoContainer = ({ authService, todoRepository }) => {
         const result = [];
         Object.keys(todos).map(key => {
           result.push(todos[key]);
+          return result;
         });
         setTodos(result);
       });
@@ -31,8 +32,6 @@ const TodoContainer = ({ authService, todoRepository }) => {
 
   useEffect(
     () => {
-      // console.log("location:", location);
-
       authService.onAuthChange(user => {
         if (user) {
           setUserId(user.uid);
@@ -51,11 +50,10 @@ const TodoContainer = ({ authService, todoRepository }) => {
         navigate("/");
       }
     },
-    [authService]
+    [authService, navigate, userId]
   );
 
   const onCreateTodo = todoToCreate => {
-    console.log("createTodo:", todoToCreate);
     setTodos(todos => {
       const updated = { ...todos };
       updated[todoToCreate.id] = todoToCreate;
@@ -65,7 +63,6 @@ const TodoContainer = ({ authService, todoRepository }) => {
   };
 
   const onEditTodo = todoToEdit => {
-    console.log("editedTodo:", todoToEdit);
     setTodos(todos => {
       const updated = todos.map(
         todo =>
@@ -77,7 +74,6 @@ const TodoContainer = ({ authService, todoRepository }) => {
   };
 
   const deleteTodo = todoToDel => {
-    console.log("deleteTodo:", todoToDel);
     setTodos(todos => {
       return todos.filter(todo => todo.id !== todoToDel.id);
     });
@@ -85,7 +81,6 @@ const TodoContainer = ({ authService, todoRepository }) => {
   };
 
   const onChecked = checkedTodo => {
-    console.log("onChecked: ", checkedTodo);
     setTodos(todos => {
       const updated = todos.map(
         todo =>

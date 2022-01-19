@@ -1,15 +1,19 @@
 import React, { useEffect } from "react";
+import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
 
 const Login = ({ authService }) => {
   const navigate = useNavigate();
 
-  const goTodolist = userId => {
-    navigate("/todolist", {
-      state: { id: userId }
-    });
-  };
+  const goTodolist = useCallback(
+    userId => {
+      navigate("/todolist", {
+        state: { id: userId }
+      });
+    },
+    [navigate]
+  );
 
   useEffect(
     () => {
@@ -17,15 +21,13 @@ const Login = ({ authService }) => {
         user && goTodolist(user.uid);
       });
     },
-    [authService]
+    [authService, goTodolist]
   );
 
   const onLogin = event => {
-    console.log(event);
     authService //
       .login(event.currentTarget.textContent)
       .then(data => {
-        console.log(data);
         goTodolist(data.user.uid);
       });
   };

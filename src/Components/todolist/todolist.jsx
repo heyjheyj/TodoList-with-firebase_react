@@ -3,8 +3,6 @@ import styles from "./todolist.module.css";
 import TodoItem from "../todoItem/todoItem";
 
 const Todolist = ({ todos, deleteTodo, editTodo, onChecked }) => {
-  console.log(todos);
-
   return (
     <div className={styles.container}>
       <section className={styles.todolist}>

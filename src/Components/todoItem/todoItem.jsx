@@ -5,8 +5,6 @@ import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const TodoItem = ({ todo, deleteTodo, editTodo, onChecked }) => {
-  // console.log("todo: ", todo);
-
   const textRef = useRef();
 
   const [editMode, setEditMode] = useState(false);
@@ -14,7 +12,6 @@ const TodoItem = ({ todo, deleteTodo, editTodo, onChecked }) => {
 
   const onEdit = () => {
     setEditMode(true);
-    console.log("changed text: ", text);
     if (text) {
       const updated = {
         id: todo.id,
@@ -36,7 +33,6 @@ const TodoItem = ({ todo, deleteTodo, editTodo, onChecked }) => {
   };
 
   const onToggle = e => {
-    console.log("onToggle", e);
     if (e.target) {
       const updated = {
         id: todo.id,
@@ -58,7 +54,6 @@ const TodoItem = ({ todo, deleteTodo, editTodo, onChecked }) => {
   };
 
   const onBlur = e => {
-    console.log(e.currentTarget);
     e.preventDefault();
     if (e.currentTarget.value === "") {
       onDelete();
