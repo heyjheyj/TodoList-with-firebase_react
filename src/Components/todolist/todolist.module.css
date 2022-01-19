@@ -33,6 +33,7 @@
 .container {
     display: grid;
     grid-template-rows: 1fr 9fr;
+    height: 78%;
 }
 
 @media screen and (max-width: 400px) {
